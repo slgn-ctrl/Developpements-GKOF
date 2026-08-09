@@ -1,53 +1,51 @@
-const audio = document.getElementById("bgMusic");
-const toggle = document.getElementById("audioToggle");
-const icon = document.getElementById("audioIcon");
-const time = document.querySelector(".vhs-time");
+const audio=document.getElementById("music");
+const boot=document.getElementById("boot");
+const sound=document.getElementById("sound");
+let playing=false;
 
-let started = false;
+audio.volume=.42;
 
-function updateAudioUI() {
-  if (audio.paused) {
-    icon.textContent = "▶";
-    toggle.innerHTML = '<span id="audioIcon">▶</span> AUDIO';
-  } else {
-    icon.textContent = "Ⅱ";
-    toggle.innerHTML = '<span id="audioIcon">Ⅱ</span> AUDIO';
-  }
-}
-
-async function startMusic() {
-  try {
-    audio.volume = 0.35;
+async function playMusic(){
+  try{
     await audio.play();
-    started = true;
-    updateAudioUI();
-  } catch (e) {
-    // Browsers can block autoplay until a user gesture.
+    playing=true;
+    sound.classList.remove("off");
+  }catch(e){
+    // Browser autoplay policy may block audible autoplay.
+    playing=false;
+    sound.classList.add("off");
   }
 }
 
-toggle.addEventListener("click", async () => {
-  if (audio.paused) await startMusic();
-  else audio.pause();
-  updateAudioUI();
+window.addEventListener("load",()=>{
+  setTimeout(()=>boot.classList.add("hide"),2600);
+  playMusic();
 });
 
-document.addEventListener("pointerdown", () => {
-  if (!started) startMusic();
-}, { once: true });
+sound.addEventListener("click",async()=>{
+  if(audio.paused){await playMusic()}else{audio.pause();playing=false;sound.classList.add("off")}
+});
 
-setInterval(() => {
-  const t = Math.floor(audio.currentTime || 0);
-  const hh = String(Math.floor(t / 3600)).padStart(2, "0");
-  const mm = String(Math.floor((t % 3600) / 60)).padStart(2, "0");
-  const ss = String(t % 60).padStart(2, "0");
-  time.textContent = `PLAY ● SP ${hh}:${mm}:${ss}`;
-}, 500);
+// If autoplay is blocked, the first interaction starts the music.
+document.addEventListener("pointerdown",()=>{
+  if(audio.paused) playMusic();
+},{once:true});
 
-// Small random VHS displacement on sections.
-setInterval(() => {
-  if (Math.random() > 0.84) {
-    document.body.style.transform = `translateX(${(Math.random() - .5) * 3}px)`;
-    setTimeout(() => document.body.style.transform = "", 70);
+const dot=document.querySelector(".cursor-dot");
+window.addEventListener("pointermove",e=>{
+  dot.style.left=e.clientX+"px";
+  dot.style.top=e.clientY+"px";
+});
+
+document.querySelectorAll("a,button").forEach(el=>{
+  el.addEventListener("mouseenter",()=>dot.style.transform="translate(-50%,-50%) scale(4)");
+  el.addEventListener("mouseleave",()=>dot.style.transform="translate(-50%,-50%) scale(1)");
+});
+
+// Occasional VHS tracking jump.
+setInterval(()=>{
+  if(Math.random()>.72){
+    document.body.classList.add("tracking");
+    setTimeout(()=>document.body.classList.remove("tracking"),70+Math.random()*100);
   }
-}, 900);
+},1100);
