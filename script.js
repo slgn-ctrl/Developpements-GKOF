@@ -1,49 +1,95 @@
 /* =========================
-   GKOF SYSTEM
+   GKOF // SYSTEM
 ========================= */
 
-console.log(`
-====================================
-        GKOF // SYSTEM
-   GORILLA KING OF FEAR
-====================================
-        SYSTEM ONLINE
-====================================
-`);
+const loader = document.querySelector(".loader");
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+        loader.classList.add("hidden");
+    }, 1900);
+
+});
+
+
+/* =========================
+   CUSTOM CURSOR
+========================= */
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+
+});
+
+
+/* =========================
+   CURSOR HOVER
+========================= */
+
+const links = document.querySelectorAll("a, button");
+
+links.forEach(link => {
+
+    link.addEventListener("mouseenter", () => {
+
+        cursor.style.width = "30px";
+        cursor.style.height = "30px";
+
+    });
+
+    link.addEventListener("mouseleave", () => {
+
+        cursor.style.width = "10px";
+        cursor.style.height = "10px";
+
+    });
+
+});
 
 
 /* =========================
    RANDOM GLITCH
 ========================= */
 
-const glitchElements =
-    document.querySelectorAll(".glitch");
+const glitch = document.querySelector(".glitch");
+
+setInterval(() => {
+
+    if (Math.random() > .55) {
+
+        const x =
+            Math.random() * 12 - 6;
+
+        glitch.style.transform =
+            `translateX(${x}px)`;
+
+        setTimeout(() => {
+
+            glitch.style.transform =
+                "translateX(0)";
+
+        }, 90);
+
+    }
+
+}, 900);
 
 
-function randomGlitch() {
+/* =========================
+   CONSOLE
+========================= */
 
-    glitchElements.forEach((element) => {
-
-        if (Math.random() > 0.55) {
-
-            const x =
-                Math.random() * 10 - 5;
-
-            element.style.transform =
-                `translateX(${x}px)`;
-
-            setTimeout(() => {
-
-                element.style.transform =
-                    "translateX(0)";
-
-            }, 80);
-
-        }
-
-    });
-
-}
-
-
-setInterval(randomGlitch, 1200);
+console.log(`
+╔══════════════════════════════╗
+║       GKOF // SYSTEM         ║
+║   GORILLA KING OF FEAR       ║
+╠══════════════════════════════╣
+║ STATUS : ONLINE              ║
+║ ACCESS : GRANTED              ║
+╚══════════════════════════════╝
+`);
