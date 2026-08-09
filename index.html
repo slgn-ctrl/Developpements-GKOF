@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GKOF — Gorilla King Of Fear</title>
+<meta name="description" content="GKOF (Gorilla King Of Fear) — a Gorilla Tag Horror game in development for Meta Quest 2, 3 and 3S.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<audio id="bgm" src="assets/aria-math.mp3" loop preload="none"></audio>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="rec"></span> GKOF</a>
+    <button class="nav-toggle">Menu</button>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="devlog.html">Devlog</a>
+      <a href="team.html">Team</a>
+      <a href="partners.html">Partners</a>
+      <a href="supporters.html">Supporters</a>
+      <a href="status.html">Status</a>
+      <a href="security.html">Security</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="signal-strip">
+    <div class="signal-head">
+      <span>Signal — unidentified source</span>
+      <span class="signal-value" id="signalValue">--</span>
+    </div>
+    <div class="signal-wave"></div>
+  </div>
+
+  <section class="hero" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="tape-meta">
+        <span>Meta Quest 2 / 3 / 3S</span>
+        <span>In development</span>
+        <span>Gorilla Tag Horror</span>
+      </div>
+      <h1 class="glitch-title" data-text="GORILLA KING OF FEAR">GORILLA KING OF FEAR</h1>
+      <p class="lede">GKOF keeps the climbing and momentum a Gorilla-style game is built on, then puts
+      something else in the map that moves just as fast and doesn't need to rest.</p>
+      <p class="credibility">Small team — No publisher — Built for Quest</p>
+      <div class="cta-row">
+        <a href="#" class="btn">Join the Discord</a>
+        <a href="devlog.html" class="btn ghost">Read the devlog</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stat-bar">
+    <div class="stat-cell"><div class="label">Build</div><div class="value">Unreleased</div></div>
+    <div class="stat-cell"><div class="label">Headsets</div><div class="value">Quest 2 / 3 / 3S</div></div>
+    <div class="stat-cell"><div class="label">Servers</div><div class="value">Checking</div></div>
+    <div class="stat-cell"><div class="label">Genre</div><div class="value">GTH</div></div>
+  </div>
+
+  <section>
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">The pitch</p>
+        <h2>What GKOF actually is</h2>
+      </div>
+      <div>
+        <p>The movement is the same discipline you already know from a Gorilla-style game — swing,
+        climb, cover ground using nothing but your arms. What changes is what else is allowed to
+        move that fast.</p>
+        <p>Every map has one thing hunting in it. It doesn't spawn on a timer and it doesn't reset
+        when a round ends badly for it. Staying ahead of it is the whole game.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Devlog</p>
+        <h2>Latest entries</h2>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">This week</div>
+        <div>
+          <h3>First real pathing pass</h3>
+          <p>The hunter now tracks a player's actual route instead of a fixed patrol point. It
+          sounds small, but it means distance from spawn stopped meaning safety.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Recently</div>
+        <div>
+          <h3>Base movement tuning</h3>
+          <p>Propulsion friction is being tuned to feel familiar to anyone coming from a
+          Gorilla-style game, on purpose — the fear should come from the situation, not the
+          controls.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Ongoing</div>
+        <div>
+          <h3>First ambient audio pass</h3>
+          <p>Right now silence is doing most of the work, which is fine but flat — nothing tells you
+          something is closing in, and nothing tells you it left. A real audio pass is next.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;">
+        <a href="devlog.html" class="btn ghost">Full devlog</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:none;">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2 style="margin-bottom:24px;">Get in touch</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Discord</h3>
+          <p>Where everything gets decided first, ahead of the devlog.</p>
+          <a href="#" class="btn ghost" style="margin-top:14px;">Join</a>
+        </div>
+        <div class="card">
+          <h3>Team</h3>
+          <p>Who's actually working on GKOF, and on what.</p>
+          <a href="team.html" class="btn ghost" style="margin-top:14px;">See the team</a>
+        </div>
+        <div class="card">
+          <h3>Status</h3>
+          <p>Build, servers, and supported headsets, live.</p>
+          <a href="status.html" class="btn ghost" style="margin-top:14px;">Full status</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    GKOF 2026 // Gorilla King Of Fear
+    <div class="footer-links">
+      <a href="team.html">Team</a>
+      <a href="status.html">Status</a>
+      <a href="security.html">Security</a>
+      <a href="#">Discord</a>
+    </div>
+  </div>
+</footer>
+
+<div class="tape-deck">
+  <button id="tapePlay" aria-label="Stop music">❚❚</button>
+  <div class="bars"><i></i><i></i><i></i><i></i></div>
+  <span>aria-math.mp3</span>
+</div>
+
+<script src="assets/glitch.js"></script>
+</body>
+</html>

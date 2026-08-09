@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Devlog — GKOF</title>
+<meta name="description" content="Development log for Gorilla King Of Fear (GKOF).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<audio id="bgm" src="assets/aria-math.mp3" loop preload="none"></audio>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="rec"></span> GKOF</a>
+    <button class="nav-toggle">Menu</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="devlog.html" class="active">Devlog</a>
+      <a href="team.html">Team</a>
+      <a href="partners.html">Partners</a>
+      <a href="supporters.html">Supporters</a>
+      <a href="status.html">Status</a>
+      <a href="security.html">Security</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="signal-strip">
+    <div class="signal-head">
+      <span>Signal — unidentified source</span>
+      <span class="signal-value" id="signalValue">--</span>
+    </div>
+    <div class="signal-wave"></div>
+  </div>
+
+  <section class="hero" style="padding-top:52px; border-bottom:none;">
+    <div class="wrap">
+      <p class="eyebrow">Devlog</p>
+      <h1 style="font-size:clamp(36px,6.5vw,58px);">Devlog</h1>
+      <p class="lede">What changed, what broke, and what got fixed — in the order it happened. Most
+      of it hits the Discord first; this is the version that gets written down.</p>
+    </div>
+  </section>
+
+  <section style="border-bottom:none;">
+    <div class="wrap">
+
+      <div class="log-entry">
+        <div class="log-tag">This week</div>
+        <div>
+          <h3>First real pathing pass</h3>
+          <p>The hunter now tracks a player's actual route instead of a fixed patrol point. Rooms
+          that felt safe purely because they were far from spawn no longer are — that's staying in,
+          it changes more about how people play than we expected.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Recently</div>
+        <div>
+          <h3>Base movement tuning</h3>
+          <p>Propulsion friction has been adjusted to stay close to what most players already know
+          from a Gorilla-style game. The goal is instant familiarity with the controls, so the fear
+          comes from the situation instead.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Recently</div>
+        <div>
+          <h3>First map layout</h3>
+          <p>A first test layout is playable solo. Too many straight sightlines right now — it
+          favors outrunning the threat over actually losing it. Next pass adds blind branches and
+          dead ends.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Ongoing</div>
+        <div>
+          <h3>First ambient audio pass</h3>
+          <p>Silence is carrying a lot of the tension already, but it's flat — nothing signals that
+          something is closing in, and nothing confirms it's gone. A real audio pass is the next
+          priority.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Ongoing</div>
+        <div>
+          <h3>Quest 2 / 3 / 3S support</h3>
+          <p>Performance is being tested against Quest 2 first, since it's the most limited of the
+          three headsets. Whatever runs well there will run well everywhere else — the reverse
+          doesn't hold.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:36px; color:var(--fg-faint); font-size:12px; letter-spacing:.04em;">
+        Most updates land on the Discord first, in real time.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    GKOF 2026 // Gorilla King Of Fear
+    <div class="footer-links">
+      <a href="team.html">Team</a>
+      <a href="status.html">Status</a>
+      <a href="security.html">Security</a>
+      <a href="#">Discord</a>
+    </div>
+  </div>
+</footer>
+
+<div class="tape-deck">
+  <button id="tapePlay" aria-label="Stop music">❚❚</button>
+  <div class="bars"><i></i><i></i><i></i><i></i></div>
+  <span>aria-math.mp3</span>
+</div>
+
+<script src="assets/glitch.js"></script>
+</body>
+</html>

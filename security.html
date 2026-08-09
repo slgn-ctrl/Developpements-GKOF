@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Security — GKOF</title>
+<meta name="description" content="Security and anti-cheat policy for Gorilla King Of Fear (GKOF).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<audio id="bgm" src="assets/aria-math.mp3" loop preload="none"></audio>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="rec"></span> GKOF</a>
+    <button class="nav-toggle">Menu</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="devlog.html">Devlog</a>
+      <a href="team.html">Team</a>
+      <a href="partners.html">Partners</a>
+      <a href="supporters.html">Supporters</a>
+      <a href="status.html">Status</a>
+      <a href="security.html" class="active">Security</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="signal-strip">
+    <div class="signal-head">
+      <span>Signal — unidentified source</span>
+      <span class="signal-value" id="signalValue">--</span>
+    </div>
+    <div class="signal-wave"></div>
+  </div>
+
+  <section class="hero" style="padding-top:52px; border-bottom:none;">
+    <div class="wrap">
+      <p class="eyebrow">Fair play</p>
+      <h1 style="font-size:clamp(32px,6.5vw,54px);">Security</h1>
+      <p class="lede">What GKOF does to stay playable, and how to report a problem.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">Anti-cheat</p>
+        <h2>Modified headsets</h2>
+      </div>
+      <div>
+        <p>Rooted or modified headsets used to bypass movement tracking won't be allowed into
+        ranked matches. Detection is still being tuned — a false flag (a dropped connection read
+        as tampering) is possible during development. Report it on the Discord if it happens to
+        you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:none;">
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">Report</p>
+        <h2>A security issue</h2>
+      </div>
+      <div>
+        <p>For a technical vulnerability — not a gameplay bug — contact the team privately on
+        Discord rather than posting it publicly, until a fix is ready.</p>
+        <div class="cta-row" style="margin-top:20px; margin-bottom:0;">
+          <a href="#" class="btn ghost">Contact on Discord</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    GKOF 2026 // Gorilla King Of Fear
+    <div class="footer-links">
+      <a href="team.html">Team</a>
+      <a href="status.html">Status</a>
+      <a href="security.html">Security</a>
+      <a href="#">Discord</a>
+    </div>
+  </div>
+</footer>
+
+<div class="tape-deck">
+  <button id="tapePlay" aria-label="Stop music">❚❚</button>
+  <div class="bars"><i></i><i></i><i></i><i></i></div>
+  <span>aria-math.mp3</span>
+</div>
+
+<script src="assets/glitch.js"></script>
+</body>
+</html>

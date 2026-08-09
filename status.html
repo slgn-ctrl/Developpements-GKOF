@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Status — GKOF</title>
+<meta name="description" content="Live technical status of Gorilla King Of Fear (GKOF).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<audio id="bgm" src="assets/aria-math.mp3" loop preload="none"></audio>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="rec"></span> GKOF</a>
+    <button class="nav-toggle">Menu</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="devlog.html">Devlog</a>
+      <a href="team.html">Team</a>
+      <a href="partners.html">Partners</a>
+      <a href="supporters.html">Supporters</a>
+      <a href="status.html" class="active">Status</a>
+      <a href="security.html">Security</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="signal-strip">
+    <div class="signal-head">
+      <span>Signal — unidentified source</span>
+      <span class="signal-value" id="signalValue">--</span>
+    </div>
+    <div class="signal-wave"></div>
+  </div>
+
+  <section class="hero" style="padding-top:52px; border-bottom:none;">
+    <div class="wrap">
+      <p class="eyebrow">Live</p>
+      <h1 style="font-size:clamp(36px,6.5vw,58px);">Status</h1>
+      <p class="lede">Where GKOF stands, technically, right now.</p>
+    </div>
+  </section>
+
+  <div class="stat-bar">
+    <div class="stat-cell"><div class="label">Build</div><div class="value">Unreleased</div></div>
+    <div class="stat-cell"><div class="label">Headsets</div><div class="value">Quest 2 / 3 / 3S</div></div>
+    <div class="stat-cell"><div class="label">Servers</div><div class="value">Checking</div></div>
+    <div class="stat-cell"><div class="label">Logins today</div><div class="value">--</div></div>
+  </div>
+
+  <section style="border-bottom:none;">
+    <div class="wrap">
+      <p class="eyebrow">Systems</p>
+      <h2 style="margin-bottom:10px;">Component detail</h2>
+      <p class="lede" style="margin-bottom:26px;">This table reflects the project's internal state —
+      update it by hand, or wire it up to real monitoring later.</p>
+
+      <div class="status-row"><span class="dot checking"></span><span class="name">Game servers</span><span class="state">Checking</span></div>
+      <div class="status-row"><span class="dot up"></span><span class="name">Discord</span><span class="state">Online</span></div>
+      <div class="status-row"><span class="dot"></span><span class="name">Public build</span><span class="state">Unavailable</span></div>
+      <div class="status-row"><span class="dot up"></span><span class="name">Site</span><span class="state">Online</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    GKOF 2026 // Gorilla King Of Fear
+    <div class="footer-links">
+      <a href="team.html">Team</a>
+      <a href="status.html">Status</a>
+      <a href="security.html">Security</a>
+      <a href="#">Discord</a>
+    </div>
+  </div>
+</footer>
+
+<div class="tape-deck">
+  <button id="tapePlay" aria-label="Stop music">❚❚</button>
+  <div class="bars"><i></i><i></i><i></i><i></i></div>
+  <span>aria-math.mp3</span>
+</div>
+
+<script src="assets/glitch.js"></script>
+</body>
+</html>
