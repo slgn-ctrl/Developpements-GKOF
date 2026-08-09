@@ -1,126 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
 <title>GKOF — Gorilla King Of Fear</title>
-<meta name="description" content="GKOF — Gorilla King Of Fear. Enter the signal.">
+<meta name="description" content="GKOF (Gorilla King Of Fear) — un Gorilla Tag Horror en développement pour Meta Quest 2, 3 et 3S.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#060606">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<div id="boot" class="boot">
-  <div class="boot-top"><span>GKOF SYSTEM</span><span>BUILD 0.41115</span></div>
-  <div class="boot-center">
-    <div class="boot-logo">GK<span>OF</span></div>
-    <div class="boot-line"><i></i></div>
-    <p>INITIALIZING FEAR ENGINE...</p>
-  </div>
-  <div class="boot-bottom"><span>NO SIGNAL IS SAFE</span><span>PRESS ENTER</span></div>
-</div>
 
-<div class="grain"></div>
-<div class="scanlines"></div>
+<div class="crt-overlay"></div>
+<div class="noise-overlay"></div>
 <div class="vignette"></div>
-<div class="cursor-dot"></div>
 
-<header class="header">
-  <a href="#top" class="logo">GK<span>OF</span></a>
-  <nav>
-    <a href="#world">WORLD</a>
-    <a href="#monsters">MONSTERS</a>
-    <a href="#devlog">DEVLOG</a>
-  </nav>
-  <button id="sound" class="sound"><span class="sound-bars"><i></i><i></i><i></i><i></i></span> SOUND</button>
+<audio id="bgm" src="assets/aria-math.mp3" loop preload="none"></audio>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="rec"></span> GKOF</a>
+    <button class="nav-toggle">[ MENU ]</button>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="devlog.html">Devlog</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="soutiens.html">Soutiens</a>
+      <a href="etat.html">État</a>
+      <a href="securite.html">Sécurité</a>
+    </nav>
+  </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="signal-label"><span class="live-dot"></span> SIGNAL 001 // CONNECTED</div>
-    <h1><span>GORILLA</span><br><em>KING OF FEAR</em></h1>
-    <div class="hero-bottom">
-      <p>YOU ENTERED THE WRONG FOREST.<br>NOW SOMETHING KNOWS YOUR NAME.</p>
-      <a href="#world" class="discover">DISCOVER GKOF <b>↓</b></a>
+<main>
+
+  <section class="hero" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="tape-meta">
+        <span>Meta Quest 2 / 3 / 3S</span>
+        <span>En développement</span>
+        <span>Gorilla Tag Horror</span>
+      </div>
+      <h1 class="glitch-title" data-text="GORILLA KING OF FEAR">GORILLA KING OF FEAR</h1>
+      <p class="lede">GKOF. Tu grimpes, tu balances, tu fuis — sauf que cette fois, la forêt n'est pas vide.
+      Un Gorilla Tag Horror en VR, où se déplacer vite ne suffit jamais tout à fait à semer ce qui te suit.</p>
+      <div class="cta-row">
+        <a href="#" class="btn">Rejoindre le Discord</a>
+        <a href="devlog.html" class="btn ghost">Voir le devlog</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stat-bar">
+    <div class="wrap" style="display:contents;">
+      <div class="stat-cell"><div class="label">Build</div><div class="value">Non sorti</div></div>
+      <div class="stat-cell"><div class="label">Casques</div><div class="value">Quest 2 / 3 / 3S</div></div>
+      <div class="stat-cell"><div class="label">Serveurs</div><div class="value">En vérification</div></div>
+      <div class="stat-cell"><div class="label">Genre</div><div class="value">GTH</div></div>
     </div>
   </div>
-  <div class="coordinates">43°17' // UNKNOWN<br>LAT 00.000 / LON 00.000</div>
-  <div class="vertical">GORILLA KING OF FEAR // 2026</div>
-  <div class="hero-gkof">GK<br>OF</div>
-</section>
 
-<section class="marquee"><div>
-  <span>NO ESCAPE</span><b>///</b><span>NO RESET</span><b>///</b><span>NO MERCY</span><b>///</b><span>GKOF</span><b>///</b>
-  <span>NO ESCAPE</span><b>///</b><span>NO RESET</span><b>///</b><span>NO MERCY</span><b>///</b><span>GKOF</span>
-</div></section>
-
-<section class="world section" id="world">
-  <div class="section-head"><span>01</span><span>THE WORLD</span></div>
-  <div class="world-grid">
-    <div class="world-title"><small>WELCOME TO</small><h2>THE<br>FEAR.</h2></div>
-    <div class="world-copy">
-      <p class="lead">GKOF is a VR horror experience where movement is your only weapon — and stopping might be the worst decision you can make.</p>
-      <p>Explore abandoned environments, encounter things that should not exist and survive creatures that don't care how fast you can run.</p>
-      <div class="facts"><div><strong>VR</strong><small>IMMERSIVE</small></div><div><strong>4+</strong><small>PLAYERS</small></div><div><strong>∞</strong><small>THREATS</small></div></div>
+  <section>
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">Le jeu</p>
+        <h2>Ce que c'est réellement</h2>
+      </div>
+      <div>
+        <p>GKOF prend la base du mouvement à la Gorilla Tag — grimper, se propulser, traverser un
+        environnement à pleine vitesse à la seule force des bras — et retire le confort. Tu n'es
+        plus seul à courir vite : quelque chose dans la map court aussi, et il ne se fatigue pas.</p>
+        <p>Pas de checkpoint généreux, pas de sécurité fausse. Rester en mouvement est une stratégie
+        de survie autant qu'une mécanique de jeu.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="monster-section section" id="monsters">
-  <div class="section-head"><span>02</span><span>THE THREATS</span></div>
-  <div class="monster-layout">
-    <div class="monster-card">
-      <div class="monster-noise"></div>
-      <div class="monster-silhouette"></div>
-      <div class="eyes"><i></i><i></i></div>
-      <div class="monster-label">ENTITY_001</div>
-      <div class="monster-warning">DO NOT APPROACH</div>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Journal de développement</p>
+        <h2>Dernières entrées</h2>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Cette semaine</div>
+        <div>
+          <h3>Premier prototype de traque</h3>
+          <p>Le monstre suit désormais la trajectoire du joueur au lieu de viser un point fixe.
+          Ça change complètement la lecture des salles — ce qui semblait sûr ne l'est plus forcément.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Récemment</div>
+        <div>
+          <h3>Réglage du mouvement de base</h3>
+          <p>Ajustement des frictions de propulsion pour que la prise en main reste familière à
+          quiconque a déjà joué à un Gorilla-like, tout en laissant de la place à la panique.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">En cours</div>
+        <div>
+          <h3>Premiers sons d'ambiance</h3>
+          <p>Le silence fait plus peur que n'importe quel effet pour l'instant — c'est volontaire,
+          mais ça manque encore de contraste. Prochaine étape : une vraie passe audio.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;">
+        <a href="devlog.html" class="btn ghost">Tout le devlog</a>
+      </div>
     </div>
-    <div class="monster-info">
-      <small>UNKNOWN ENTITY // CLASSIFIED</small>
-      <h2>IT'S<br><span>WATCHING.</span></h2>
-      <p>Some monsters chase. Others wait. This one learned that you're afraid of the dark.</p>
-      <div class="warning-line"><span>THREAT LEVEL</span><b>██████████</b></div>
+  </section>
+
+  <section style="border-bottom:none;">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2 style="margin-bottom:22px;">Nous rejoindre</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Discord</h3>
+          <p>Là où tout se décide en premier, avant même le devlog.</p>
+          <a href="#" class="btn ghost" style="margin-top:14px;">Rejoindre</a>
+        </div>
+        <div class="card">
+          <h3>Équipe</h3>
+          <p>Qui travaille vraiment sur GKOF, et sur quoi.</p>
+          <a href="equipe.html" class="btn ghost" style="margin-top:14px;">Voir l'équipe</a>
+        </div>
+        <div class="card">
+          <h3>État du jeu</h3>
+          <p>Build, serveurs, casques pris en charge, en direct.</p>
+          <a href="etat.html" class="btn ghost" style="margin-top:14px;">Voir l'état</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="terminal-section">
-  <div class="terminal">
-    <div class="terminal-head"><span>GKOF // SECURE TERMINAL</span><span>● ONLINE</span></div>
-    <div class="terminal-body">
-      <p><b>&gt;</b> establishing connection...</p>
-      <p><b>&gt;</b> player signal found</p>
-      <p><b>&gt;</b> unknown signal found</p>
-      <p class="danger"><b>&gt;</b> IT FOUND YOU.</p>
-      <div class="terminal-cursor">█</div>
-    </div>
-  </div>
-</section>
-
-<section class="devlog section" id="devlog">
-  <div class="section-head"><span>03</span><span>DEVELOPMENT LOG</span></div>
-  <div class="logs">
-    <article><time>08 / 2026</time><div><h3>THE SIGNAL RETURNS</h3><p>New environments, monster systems and cinematic horror sequences are entering development.</p></div><span>01</span></article>
-    <article><time>07 / 2026</time><div><h3>MONSTERS REWORKED</h3><p>Movement, animations and encounters are being rebuilt to make every hunt less predictable.</p></div><span>02</span></article>
-    <article><time>06 / 2026</time><div><h3>GKOF // ONLINE</h3><p>Multiplayer systems and the first playable horror loop are connected.</p></div><span>03</span></article>
-  </div>
-</section>
-
-<section class="final">
-  <div class="final-bg">GKOF</div>
-  <p>THE SIGNAL NEVER STOPPED.</p>
-  <h2>ARE YOU<br><span>READY?</span></h2>
-  <a href="#top">RETURN TO SIGNAL ↑</a>
-</section>
 </main>
 
-<footer><span>GORILLA KING OF FEAR © 2026</span><span>GKOF // ALL SYSTEMS UNSTABLE</span><span>MADE FOR VR</span></footer>
+<footer class="site-footer">
+  <div class="wrap">
+    GKOF 2026 // Gorilla King Of Fear
+    <div class="footer-links">
+      <a href="equipe.html">Équipe</a>
+      <a href="etat.html">État</a>
+      <a href="securite.html">Sécurité</a>
+      <a href="#">Discord</a>
+    </div>
+  </div>
+</footer>
 
-<audio id="music" src="assets/aria-math.mp3" loop preload="auto"></audio>
-<script src="script.js"></script>
+<div class="tape-deck">
+  <button id="tapePlay" aria-label="Lancer la musique">►</button>
+  <div class="bars"><i></i><i></i><i></i><i></i></div>
+  <span>aria-math.mp3</span>
+</div>
+
+<script src="assets/glitch.js"></script>
 </body>
 </html>
