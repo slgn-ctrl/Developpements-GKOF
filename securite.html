@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Sécurité — GKOF</title>
+<meta name="description" content="Sécurité et anti-triche de Gorilla King Of Fear (GKOF).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#060606">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="crt-overlay"></div>
+<div class="noise-overlay"></div>
+<div class="vignette"></div>
+
+<audio id="bgm" src="assets/aria-math.mp3" loop preload="none"></audio>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="rec"></span> GKOF</a>
+    <button class="nav-toggle">[ MENU ]</button>
+    <nav class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="devlog.html">Devlog</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="soutiens.html">Soutiens</a>
+      <a href="etat.html">État</a>
+      <a href="securite.html" class="active">Sécurité</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-top:56px;">
+    <div class="wrap">
+      <p class="eyebrow">Fair-play</p>
+      <h1 class="glitch-title" data-text="SÉCURITÉ" style="font-size:clamp(34px,7vw,60px);">SÉCURITÉ</h1>
+      <p class="lede">Ce que GKOF fait pour rester jouable, et comment nous signaler un problème.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">Anti-triche</p>
+        <h2>Casques modifiés</h2>
+      </div>
+      <div>
+        <p>Les casques rootés ou modifiés pour contourner le suivi de mouvement ne pourront pas
+        rejoindre les parties classées. La détection est encore en réglage — un faux positif
+        (déconnexion réseau confondue avec de la triche) est possible pendant le développement ;
+        signale-le sur le Discord si ça t'arrive.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:none;">
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">Signaler</p>
+        <h2>Un problème de sécurité</h2>
+      </div>
+      <div>
+        <p>Pour une vulnérabilité technique (pas un bug de gameplay), contacte l'équipe en privé
+        sur le Discord plutôt que publiquement, le temps qu'un correctif soit prêt.</p>
+        <div class="cta-row" style="margin-top:20px;">
+          <a href="#" class="btn ghost">Contacter sur Discord</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    GKOF 2026 // Gorilla King Of Fear
+    <div class="footer-links">
+      <a href="equipe.html">Équipe</a>
+      <a href="etat.html">État</a>
+      <a href="securite.html">Sécurité</a>
+      <a href="#">Discord</a>
+    </div>
+  </div>
+</footer>
+
+<div class="tape-deck">
+  <button id="tapePlay" aria-label="Lancer la musique">►</button>
+  <div class="bars"><i></i><i></i><i></i><i></i></div>
+  <span>aria-math.mp3</span>
+</div>
+
+<script src="assets/glitch.js"></script>
+</body>
+</html>

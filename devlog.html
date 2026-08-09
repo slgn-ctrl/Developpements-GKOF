@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Devlog — GKOF</title>
+<meta name="description" content="Journal de développement de Gorilla King Of Fear (GKOF).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#060606">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="crt-overlay"></div>
+<div class="noise-overlay"></div>
+<div class="vignette"></div>
+
+<audio id="bgm" src="assets/aria-math.mp3" loop preload="none"></audio>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="rec"></span> GKOF</a>
+    <button class="nav-toggle">[ MENU ]</button>
+    <nav class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="devlog.html" class="active">Devlog</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="soutiens.html">Soutiens</a>
+      <a href="etat.html">État</a>
+      <a href="securite.html">Sécurité</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-top:56px;">
+    <div class="wrap">
+      <p class="eyebrow">Journal de développement</p>
+      <h1 class="glitch-title" data-text="DEVLOG" style="font-size:clamp(38px,7vw,64px);">DEVLOG</h1>
+      <p class="lede">Ce qui a changé, cassé, et été réparé — dans l'ordre où c'est arrivé. La plupart
+      des détails passent d'abord par le Discord ; ceci est la version posée par écrit.</p>
+    </div>
+  </section>
+
+  <section style="border-bottom:none;">
+    <div class="wrap">
+
+      <div class="log-entry">
+        <div class="log-tag">Cette semaine</div>
+        <div>
+          <h3>Premier prototype de traque</h3>
+          <p>Le monstre suit désormais la trajectoire réelle du joueur plutôt qu'un point de
+          repop fixe. Conséquence directe : les salles qu'on pensait "safe" parce qu'elles sont loin
+          du spawn ne le sont plus du tout. On garde ce comportement, il change la façon de jouer
+          plus que prévu.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Récemment</div>
+        <div>
+          <h3>Réglage du mouvement de base</h3>
+          <p>Les frictions de propulsion ont été revues pour rester proches de ce que la plupart
+          des joueurs connaissent déjà d'un Gorilla-like. L'objectif : que la prise en main soit
+          immédiate, et que la peur vienne de la situation, pas des contrôles.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">Récemment</div>
+        <div>
+          <h3>Première passe de map</h3>
+          <p>Un premier layout de test est jouable en solo. Trop de lignes droites pour l'instant —
+          ça favorise la fuite plus que la tension. La prochaine passe ajoute des embranchements
+          aveugles.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">En cours</div>
+        <div>
+          <h3>Premiers sons d'ambiance</h3>
+          <p>Le silence porte déjà une bonne partie de la tension, mais il manque encore de
+          contraste : rien ne prévient qu'un danger approche, et rien ne confirme qu'il est reparti.
+          Une vraie passe audio est la priorité suivante.</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-tag">En cours</div>
+        <div>
+          <h3>Support Quest 2 / 3 / 3S</h3>
+          <p>Les performances sont testées en priorité sur Quest 2, le matériel le plus limitant du
+          trio. Ce qui tourne bien dessus tournera bien partout ailleurs — l'inverse n'est pas vrai.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:34px; font-family:var(--font-data); color:var(--fg-faint); font-size:16px;">
+        La majorité de ces mises à jour passe d'abord par le Discord, en temps réel.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    GKOF 2026 // Gorilla King Of Fear
+    <div class="footer-links">
+      <a href="equipe.html">Équipe</a>
+      <a href="etat.html">État</a>
+      <a href="securite.html">Sécurité</a>
+      <a href="#">Discord</a>
+    </div>
+  </div>
+</footer>
+
+<div class="tape-deck">
+  <button id="tapePlay" aria-label="Lancer la musique">►</button>
+  <div class="bars"><i></i><i></i><i></i><i></i></div>
+  <span>aria-math.mp3</span>
+</div>
+
+<script src="assets/glitch.js"></script>
+</body>
+</html>
