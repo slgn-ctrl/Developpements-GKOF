@@ -13,7 +13,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* Random glitch bursts across the page */
+  /* Intro boot sequence — dismisses on its own, or on any interaction */
+  const boot = document.getElementById('introBoot');
+  if (boot) {
+    const dismiss = () => boot.classList.add('hide');
+    const autoTimer = setTimeout(dismiss, reduceMotion ? 0 : 1500);
+    const skip = () => { clearTimeout(autoTimer); dismiss(); };
+    boot.addEventListener('click', skip);
+    document.addEventListener('keydown', skip, { once: true });
+  }
+
+  /* REC timestamp, ticks up like a camcorder counter */
+  const timerEl = document.getElementById('recTimer');
+  if (timerEl) {
+    let seconds = 0;
+    setInterval(() => {
+      seconds++;
+      const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const s = String(seconds % 60).padStart(2, '0');
+      timerEl.textContent = `REC ${m}:${s}`;
+    }, 1000);
+  }
+
+  /* Random full-page glitch bursts */
   if (!reduceMotion) {
     const scheduleBurst = () => {
       const delay = 4000 + Math.random() * 9000;
@@ -26,10 +48,54 @@ document.addEventListener('DOMContentLoaded', () => {
     scheduleBurst();
   }
 
-  /* Background tape (music) */
+  /* Occasional tracking-loss sweep drifting down the page */
+  const sweep = document.querySelector('.tracking-sweep');
+  if (sweep && !reduceMotion) {
+    const runSweep = () => {
+      sweep.classList.remove('run');
+      void sweep.offsetWidth;
+      sweep.classList.add('run');
+      setTimeout(runSweep, 7000 + Math.random() * 11000);
+    };
+    setTimeout(runSweep, 3200);
+  }
+
+  /* Text-scramble on hover for nav links and buttons */
+  if (!reduceMotion) {
+    const glitchChars = '!<>-_\\/[]{}=+*^?#01';
+    const attachScramble = (el) => {
+      const original = el.textContent;
+      let frame = null;
+      el.addEventListener('mouseenter', () => {
+        let iterations = 0;
+        clearInterval(frame);
+        frame = setInterval(() => {
+          el.textContent = original
+            .split('')
+            .map((ch, i) => {
+              if (ch === ' ') return ch;
+              if (i < iterations) return original[i];
+              return glitchChars[Math.floor(Math.random() * glitchChars.length)];
+            })
+            .join('');
+          iterations += original.length / 8;
+          if (iterations >= original.length) {
+            clearInterval(frame);
+            el.textContent = original;
+          }
+        }, 30);
+      });
+      el.addEventListener('mouseleave', () => {
+        clearInterval(frame);
+        el.textContent = original;
+      });
+    };
+    document.querySelectorAll('.main-nav a, .btn').forEach(attachScramble);
+  }
+
+  /* Background tape (music) — plays automatically, button only stops/restarts it */
   const audio = document.getElementById('bgm');
   const playBtn = document.getElementById('tapePlay');
-  const STORAGE_KEY = 'gkof-tape-playing';
 
   if (audio && playBtn) {
     audio.volume = 0.35;
@@ -37,27 +103,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const setPlayingUI = (isPlaying) => {
       document.body.classList.toggle('playing', isPlaying);
       playBtn.textContent = isPlaying ? '❚❚' : '►';
-      playBtn.setAttribute('aria-label', isPlaying ? 'Mettre en pause la musique' : 'Lancer la musique');
+      playBtn.setAttribute('aria-label', isPlaying ? 'Couper la musique' : 'Relancer la musique');
     };
 
-    playBtn.addEventListener('click', () => {
+    const tryPlay = () => audio.play().then(() => setPlayingUI(true)).catch(() => setPlayingUI(false));
+
+    // Attempt autoplay immediately
+    tryPlay();
+
+    // Browsers that block autoplay with sound: start on the very first
+    // interaction anywhere on the page, no extra prompt needed
+    const resumeOnGesture = () => tryPlay();
+    document.addEventListener('click', resumeOnGesture, { once: true });
+    document.addEventListener('keydown', resumeOnGesture, { once: true });
+    document.addEventListener('touchstart', resumeOnGesture, { once: true });
+
+    // The deck button only ever stops or restarts playback explicitly
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (audio.paused) {
-        audio.play().then(() => {
-          setPlayingUI(true);
-          localStorage.setItem(STORAGE_KEY, '1');
-        }).catch(() => {});
+        tryPlay();
       } else {
         audio.pause();
         setPlayingUI(false);
-        localStorage.setItem(STORAGE_KEY, '0');
       }
     });
-
-    // Resume across page navigation if the visitor already opted in
-    if (localStorage.getItem(STORAGE_KEY) === '1') {
-      audio.play().then(() => setPlayingUI(true)).catch(() => setPlayingUI(false));
-    } else {
-      setPlayingUI(false);
-    }
   }
 });
