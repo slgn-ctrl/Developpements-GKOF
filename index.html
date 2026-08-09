@@ -1,432 +1,173 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>GKOF — Gorilla King Of Fear</title>
-
-    <meta
-        name="description"
-        content="GKOF — Gorilla King Of Fear. Enter the system."
-    >
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="GORILLA KING OF FEAR — a black & white VHS horror experience for Meta Quest.">
+  <title>GKOF // GORILLA KING OF FEAR</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+  <div class="vhs-time">PLAY ● SP 00:00:00</div>
+  <div class="rec"><i></i> REC</div>
 
-    <div class="cursor"></div>
-    <div class="noise"></div>
-    <div class="scanlines"></div>
+  <header class="nav">
+    <a class="brand glitch" href="#top" data-text="GKOF">GKOF</a>
+    <nav>
+      <a href="#game">GAME</a>
+      <a href="#features">FEATURES</a>
+      <a href="#status">STATUS</a>
+      <a href="#devlog">DEVLOG</a>
+    </nav>
+    <button class="audio-toggle" id="audioToggle" aria-label="Toggle music">
+      <span id="audioIcon">▶</span> AUDIO
+    </button>
+  </header>
 
-    <!-- LOADER -->
-
-    <div class="loader">
-        <div class="loader-logo">GKOF</div>
-
-        <div class="loader-bar">
-            <span></span>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <p class="eyebrow">META QUEST // HORROR // IN DEVELOPMENT</p>
+        <h1 class="hero-title glitch" data-text="GORILLA KING OF FEAR">
+          GORILLA <span>KING</span><br>OF FEAR
+        </h1>
+        <div class="hero-sub">
+          <span>GKOF_001</span>
+          <span>NO ESCAPE</span>
+          <span>NO RESET</span>
         </div>
-
-        <div class="loader-text">
-            INITIALIZING SYSTEM...
+        <p class="hero-copy">
+          Something is watching from the dark. Run, survive, and try not to become
+          the next thing the forest remembers.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#game">ENTER THE GAME <b>↘</b></a>
+          <a class="btn" href="#devlog">VIEW DEVLOG <b>↗</b></a>
         </div>
-    </div>
+      </div>
+      <div class="hero-mark">GK<br>OF</div>
+      <div class="scroll">SCROLL TO DESCEND <span>↓</span></div>
+    </section>
 
+    <section class="ticker" aria-label="News ticker">
+      <div class="ticker-track">
+        <span>/// GORILLA KING OF FEAR ///</span>
+        <span>/// BUILD IN DEVELOPMENT ///</span>
+        <span>/// QUEST 2 / 3 / 3S ///</span>
+        <span>/// SIGNAL UNSTABLE ///</span>
+        <span>/// DO NOT LOOK BACK ///</span>
+      </div>
+    </section>
 
-    <!-- NAVIGATION -->
-
-    <header>
-
-        <a href="#home" class="brand">
-            <span class="brand-symbol">G</span>
-            <span>GKOF</span>
-        </a>
-
-        <div class="nav-status">
-            <i></i>
-            SYSTEM ONLINE
+    <section class="section intro" id="game">
+      <div class="section-index">01 / THE GAME</div>
+      <div class="section-main">
+        <p class="kicker">WHAT IT ACTUALLY IS</p>
+        <h2>THE FOREST<br>DOESN'T FORGET.</h2>
+        <p class="large-copy">
+          GKOF is a multiplayer VR horror experience built around movement,
+          tension, monsters and the feeling that something is always one room
+          behind you.
+        </p>
+        <div class="stat-row">
+          <div><strong>VR</strong><span>PLATFORM</span></div>
+          <div><strong>4+</strong><span>PLAYERS</span></div>
+          <div><strong>∞</strong><span>FEAR</span></div>
         </div>
-
-        <nav>
-            <a href="#about">01 / ABOUT</a>
-            <a href="#projects">02 / PROJECTS</a>
-            <a href="#contact">03 / CONTACT</a>
-        </nav>
-
-        <button class="menu-button">
-            MENU
-        </button>
-
-    </header>
-
-
-    <!-- HERO -->
-
-    <main>
-
-        <section id="home" class="hero">
-
-            <div class="hero-grid"></div>
-
-            <div class="hero-top">
-                <span>GKOF // 001</span>
-                <span>EST. 2026</span>
-                <span>CLASSIFIED</span>
-            </div>
-
-            <div class="hero-center">
-
-                <div class="eyebrow">
-                    <span></span>
-                    ENTER THE FEAR
-                    <span></span>
-                </div>
-
-                <h1 class="glitch" data-text="GKOF">
-                    GKOF
-                </h1>
-
-                <h2>
-                    GORILLA KING OF FEAR
-                </h2>
-
-                <p>
-                    THIS IS NOT A WEBSITE.<br>
-                    THIS IS THE SYSTEM.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#projects" class="primary-button">
-                        EXPLORE GKOF
-                        <span>↗</span>
-                    </a>
-
-                    <a href="#about" class="secondary-button">
-                        ACCESS FILES
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hero-side left">
-                <span>NO SIGNAL</span>
-                <span>NO MERCY</span>
-                <span>NO FEAR</span>
-            </div>
-
-            <div class="hero-side right">
-                <span>43° 12' 08"</span>
-                <span>CLASS // X</span>
-                <span>GKOF_PROTOCOL</span>
-            </div>
-
-            <div class="hero-bottom">
-
-                <span>SCROLL TO DESCEND</span>
-
-                <div class="scroll-line">
-                    <span></span>
-                </div>
-
-                <span>↓</span>
-
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT -->
-
-        <section id="about" class="about section">
-
-            <div class="section-number">
-                01
-            </div>
-
-            <div class="section-heading">
-                <p>IDENTITY_FILE</p>
-
-                <h2>
-                    WHO IS<br>
-                    <span>GKOF?</span>
-                </h2>
-            </div>
-
-            <div class="about-content">
-
-                <div class="about-intro">
-                    <span class="quote">"</span>
-
-                    <p>
-                        Gorilla King Of Fear isn't a name.
-                        It's an identity.
-                    </p>
-                </div>
-
-                <div class="about-text">
-
-                    <p>
-                        GKOF est un univers numérique construit
-                        autour d'une esthétique sombre, brutale
-                        et expérimentale.
-                    </p>
-
-                    <p>
-                        Projets, créations, expériences et futurs
-                        concepts seront regroupés ici.
-                    </p>
-
-                    <div class="terminal-box">
-
-                        <div class="terminal-head">
-                            <span>GKOF_TERMINAL</span>
-                            <span>● ● ●</span>
-                        </div>
-
-                        <div class="terminal-body">
-
-                            <p>
-                                <span>></span> loading_identity...
-                            </p>
-
-                            <p>
-                                <span>></span> identity: GKOF
-                            </p>
-
-                            <p>
-                                <span>></span> status:
-                                <b>ACTIVE</b>
-                            </p>
-
-                            <p>
-                                <span>></span> access:
-                                <b>GRANTED</b>
-                            </p>
-
-                            <p class="blink-line">
-                                <span>></span> _
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJECTS -->
-
-        <section id="projects" class="projects section">
-
-            <div class="section-number">
-                02
-            </div>
-
-            <div class="section-heading">
-
-                <p>ARCHIVE_DATABASE</p>
-
-                <h2>
-                    SELECTED<br>
-                    <span>PROJECTS.</span>
-                </h2>
-
-            </div>
-
-
-            <div class="project-grid">
-
-                <article class="project-card featured">
-
-                    <div class="card-top">
-                        <span>001</span>
-                        <span>CLASSIFIED</span>
-                    </div>
-
-                    <div class="card-visual">
-                        <div class="visual-text">
-                            GKOF
-                        </div>
-
-                        <div class="visual-lines"></div>
-                    </div>
-
-                    <div class="card-info">
-
-                        <div>
-                            <p>PROJECT</p>
-                            <h3>UNKNOWN_01</h3>
-                        </div>
-
-                        <a href="#">
-                            OPEN →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="card-top">
-                        <span>002</span>
-                        <span>ARCHIVED</span>
-                    </div>
-
-                    <div class="card-visual visual-two">
-                        <div class="crosshair">+</div>
-                    </div>
-
-                    <div class="card-info">
-
-                        <div>
-                            <p>PROJECT</p>
-                            <h3>BLACK FILE</h3>
-                        </div>
-
-                        <a href="#">
-                            OPEN →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="card-top">
-                        <span>003</span>
-                        <span>LOCKED</span>
-                    </div>
-
-                    <div class="card-visual visual-three">
-
-                        <div class="lock">
-                            0 1 0 1<br>
-                            1 0 1 0<br>
-                            0 1 1 0
-                        </div>
-
-                    </div>
-
-                    <div class="card-info">
-
-                        <div>
-                            <p>PROJECT</p>
-                            <h3>UNKNOWN_03</h3>
-                        </div>
-
-                        <a href="#">
-                            OPEN →
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- STATISTICS -->
-
-        <section class="stats">
-
-            <div class="stat">
-                <strong>001</strong>
-                <span>ACTIVE PROJECTS</span>
-            </div>
-
-            <div class="stat">
-                <strong>∞</strong>
-                <span>FUTURE POSSIBILITIES</span>
-            </div>
-
-            <div class="stat">
-                <strong>000</strong>
-                <span>LIMITS</span>
-            </div>
-
-            <div class="stat">
-                <strong>100%</strong>
-                <span>GKOF</span>
-            </div>
-
-        </section>
-
-
-        <!-- CONTACT -->
-
-        <section id="contact" class="contact section">
-
-            <div class="contact-bg">
-                GKOF
-            </div>
-
-            <div class="section-number">
-                03
-            </div>
-
-            <div class="contact-content">
-
-                <p>FINAL_TRANSMISSION</p>
-
-                <h2>
-                    READY TO<br>
-                    <span>ENTER?</span>
-                </h2>
-
-                <p class="contact-description">
-                    The system is waiting.
-                    Make contact.
-                </p>
-
-                <a
-                    href="mailto:contact@gkof.com"
-                    class="contact-button"
-                >
-                    SEND TRANSMISSION
-                    <span>↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-brand">
-            GKOF_
+      </div>
+    </section>
+
+    <section class="section features" id="features">
+      <div class="section-index">02 / FEATURES</div>
+      <div class="section-main">
+        <div class="feature">
+          <span>01</span>
+          <div>
+            <h3>HUNTED</h3>
+            <p>Monsters don't follow a script. Hide, move, make noise — then live with what you started.</p>
+          </div>
         </div>
-
-        <div>
-            GORILLA KING OF FEAR
+        <div class="feature">
+          <span>02</span>
+          <div>
+            <h3>IMMERSIVE VR</h3>
+            <p>Gorilla locomotion, physical movement and environments designed to make every corner feel unsafe.</p>
+          </div>
         </div>
-
-        <div>
-            © 2026
+        <div class="feature">
+          <span>03</span>
+          <div>
+            <h3>THE UNKNOWN</h3>
+            <p>Black-and-white visual language, VHS interference and unreliable moments that blur what is real.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </footer>
+    <section class="signal" aria-label="Signal interruption">
+      <div class="signal-inner">
+        <span>NO SIGNAL</span>
+        <div class="signal-bar"></div>
+        <span>RECONNECTING...</span>
+      </div>
+    </section>
 
+    <section class="section status" id="status">
+      <div class="section-index">03 / STATUS</div>
+      <div class="section-main">
+        <div class="status-card">
+          <div class="status-head"><span>LIVE SYSTEM STATUS</span><span class="dot"></span></div>
+          <div class="status-item"><span>GAME BUILD</span><strong>IN DEVELOPMENT</strong></div>
+          <div class="status-item"><span>QUEST 2 / 3 / 3S</span><strong>SUPPORTED</strong></div>
+          <div class="status-item"><span>SERVERS</span><strong>ONLINE / TESTING</strong></div>
+          <div class="status-item"><span>MONSTERS</span><strong>REDESIGNING</strong></div>
+        </div>
+        <p class="terminal">
+          <span>&gt; booting GKOF.sys</span><br>
+          <span>&gt; locating signal... FOUND</span><br>
+          <span>&gt; unknown entity detected</span><br>
+          <span>&gt; recommendation: RUN</span>
+        </p>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="section devlog" id="devlog">
+      <div class="section-index">04 / DEVLOG</div>
+      <div class="section-main">
+        <p class="kicker">RECENT TRANSMISSIONS</p>
+        <article class="log">
+          <time>08.2026</time>
+          <div><h3>THE BUILD IS GETTING DARKER.</h3><p>Maps, monsters, animations and the core horror loop are being pushed further. More signal. Less safety.</p></div>
+        </article>
+        <article class="log">
+          <time>07.2026</time>
+          <div><h3>MONSTERS // REWORK</h3><p>New behaviors, new encounters and more unpredictable movement. You should not be able to memorize the hunt.</p></div>
+        </article>
+        <article class="log">
+          <time>06.2026</time>
+          <div><h3>GKOF // FIRST SIGNAL</h3><p>The project enters its next phase: multiplayer systems, environments and the nightmare start connecting.</p></div>
+        </article>
+      </div>
+    </section>
 
+    <section class="cta">
+      <div class="cta-glitch">GKOF</div>
+      <p>THE SIGNAL IS STILL RUNNING.</p>
+      <a class="btn btn-solid" href="#top">BACK TO TOP ↑</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>GORILLA KING OF FEAR © 2026</span>
+    <span>GKOF // ALL SYSTEMS UNSTABLE</span>
+    <span>MADE FOR META QUEST</span>
+  </footer>
+
+  <audio id="bgMusic" src="assets/aria-math.mp3" loop preload="auto"></audio>
+  <script src="script.js"></script>
 </body>
 </html>
