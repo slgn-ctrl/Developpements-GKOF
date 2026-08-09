@@ -12,15 +12,28 @@
 </head>
 <body>
 
+<div class="intro-boot" id="introBoot">
+  <div class="noise-full"></div>
+  <div class="boot-text">NO SIGNAL</div>
+  <div class="boot-sub">Tracking GKOF // cliquer pour passer</div>
+  <div class="skip-hint">appuyer sur une touche pour continuer</div>
+  <div class="test-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+
 <div class="crt-overlay"></div>
 <div class="noise-overlay"></div>
 <div class="vignette"></div>
+<div class="tracking-sweep"></div>
 
 <audio id="bgm" src="assets/aria-math.mp3" loop preload="none"></audio>
 
+<div class="test-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html"><span class="rec"></span> GKOF</a>
+    <div class="header-left">
+      <a class="brand" href="index.html"><span class="rec"></span> GKOF</a>
+      <span class="rec-timer" id="recTimer">REC 00:00</span>
+    </div>
     <button class="nav-toggle">[ MENU ]</button>
     <nav class="main-nav">
       <a href="index.html">Accueil</a>
@@ -77,6 +90,7 @@
 
 </main>
 
+<div class="test-bars foot"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 <footer class="site-footer">
   <div class="wrap">
     GKOF 2026 // Gorilla King Of Fear
