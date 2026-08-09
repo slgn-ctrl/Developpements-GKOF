@@ -1,95 +1,53 @@
-/* =========================
-   GKOF // SYSTEM
-========================= */
+const audio = document.getElementById("bgMusic");
+const toggle = document.getElementById("audioToggle");
+const icon = document.getElementById("audioIcon");
+const time = document.querySelector(".vhs-time");
 
-const loader = document.querySelector(".loader");
+let started = false;
 
-window.addEventListener("load", () => {
+function updateAudioUI() {
+  if (audio.paused) {
+    icon.textContent = "▶";
+    toggle.innerHTML = '<span id="audioIcon">▶</span> AUDIO';
+  } else {
+    icon.textContent = "Ⅱ";
+    toggle.innerHTML = '<span id="audioIcon">Ⅱ</span> AUDIO';
+  }
+}
 
-    setTimeout(() => {
-        loader.classList.add("hidden");
-    }, 1900);
+async function startMusic() {
+  try {
+    audio.volume = 0.35;
+    await audio.play();
+    started = true;
+    updateAudioUI();
+  } catch (e) {
+    // Browsers can block autoplay until a user gesture.
+  }
+}
 
+toggle.addEventListener("click", async () => {
+  if (audio.paused) await startMusic();
+  else audio.pause();
+  updateAudioUI();
 });
 
-
-/* =========================
-   CUSTOM CURSOR
-========================= */
-
-const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", (e) => {
-
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-
-});
-
-
-/* =========================
-   CURSOR HOVER
-========================= */
-
-const links = document.querySelectorAll("a, button");
-
-links.forEach(link => {
-
-    link.addEventListener("mouseenter", () => {
-
-        cursor.style.width = "30px";
-        cursor.style.height = "30px";
-
-    });
-
-    link.addEventListener("mouseleave", () => {
-
-        cursor.style.width = "10px";
-        cursor.style.height = "10px";
-
-    });
-
-});
-
-
-/* =========================
-   RANDOM GLITCH
-========================= */
-
-const glitch = document.querySelector(".glitch");
+document.addEventListener("pointerdown", () => {
+  if (!started) startMusic();
+}, { once: true });
 
 setInterval(() => {
+  const t = Math.floor(audio.currentTime || 0);
+  const hh = String(Math.floor(t / 3600)).padStart(2, "0");
+  const mm = String(Math.floor((t % 3600) / 60)).padStart(2, "0");
+  const ss = String(t % 60).padStart(2, "0");
+  time.textContent = `PLAY ● SP ${hh}:${mm}:${ss}`;
+}, 500);
 
-    if (Math.random() > .55) {
-
-        const x =
-            Math.random() * 12 - 6;
-
-        glitch.style.transform =
-            `translateX(${x}px)`;
-
-        setTimeout(() => {
-
-            glitch.style.transform =
-                "translateX(0)";
-
-        }, 90);
-
-    }
-
+// Small random VHS displacement on sections.
+setInterval(() => {
+  if (Math.random() > 0.84) {
+    document.body.style.transform = `translateX(${(Math.random() - .5) * 3}px)`;
+    setTimeout(() => document.body.style.transform = "", 70);
+  }
 }, 900);
-
-
-/* =========================
-   CONSOLE
-========================= */
-
-console.log(`
-╔══════════════════════════════╗
-║       GKOF // SYSTEM         ║
-║   GORILLA KING OF FEAR       ║
-╠══════════════════════════════╣
-║ STATUS : ONLINE              ║
-║ ACCESS : GRANTED              ║
-╚══════════════════════════════╝
-`);
